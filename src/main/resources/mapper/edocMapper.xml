@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.edocGorty.dao.EdocMapper">
+    <select id="getInfo" resultType="com.edocGorty.pojo.edocentry" parameterType="int">
+        select * from edoc_entry
+        <where>
+            <if test="categoryId != 0">
+               and   categoryId=#{categoryId}
+            </if>
+        </where>
+          limit #{from},#{pageSize}
+    </select>
+
+<delete id="Del" >
+    delete from edoc_entry where id=#{id}
+
+</delete>
+    <select id="count" resultType="Int">
+
+         select count(*) as count from edoc_entry
+        <where>
+        <if test="categoryId != 0">
+            categoryId=categoryId
+        </if>
+        </where>
+    </select>
+</mapper>

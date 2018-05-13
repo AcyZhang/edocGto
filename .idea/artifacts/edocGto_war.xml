@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="edocGto:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="edocGto.war">
+      <element id="artifact" artifact-name="edocGto:war exploded" />
+    </root>
+  </artifact>
+</component>
