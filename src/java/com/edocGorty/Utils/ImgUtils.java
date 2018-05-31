@@ -47,7 +47,8 @@ public class ImgUtils {
                     new Rectangle(0,0,(int)d.getWidth(),(int)d.getHeight()));
 //           serialNum=(int)(Math.random()*100);
 
-            serialNum +=serialNum+3;
+            serialNum ++;
+//            if (serialNum<)
             //根据文件前缀变量和文件格式变量，自动生成文件名
             path +=fileName+String.valueOf(serialNum)+"."+imageFormat;
             System.out.println(path);
