@@ -19,8 +19,8 @@ public class OssClientUtil {
     //
     private static String endpoint = "http://oss-cn-beijing.aliyuncs.com";
     //密钥
-    private static String acessKeyId = "xx";
-    private static String accessKeySecret = "xxx";
+    private static String acessKeyId = "LTAIHnUCvJa806Cv";
+    private static String accessKeySecret = "0oOuWvz9ynPYyMU3QbQ4RuPHXqN9Bu";
     //要上传的文件地址
     private static String bucket = "fe-video";
     private static OssClientUtil ossClientUtil;
