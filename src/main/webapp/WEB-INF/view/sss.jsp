@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<form method="get" action="${pageContext.request.contextPath }/edoc/inde">
+<form id="uploadForm" name="uploadForm" method="get" action="${pageContext.request.contextPath }/edoc/inde">
     <input type="hidden" name="pageIndex" value="1" />
         <p>
             文档分类
@@ -36,10 +36,14 @@
                     <span>${edoc.id}</span>
                 </td>
                 <td>
-                    <span>${edoc.title}</span>
+                    <input type="hidden" name="title">
+                    <span ty>${edoc.title}</span>
+                </td>
                 </td>
                 <td>
+                    <input type="hidden" name="summary">
                     <span>${edoc.summary}</span>
+                </input>
                 </td>
                 <td>
                     <span>${edoc.uploaduser}</span>
@@ -49,6 +53,9 @@
                 </td>
                 <td>
                     <a href="javascript:" class="ssd" id="${edoc.id}">删除</a>
+                </td>
+                <td>
+                    <button type="button" class="xxx" type="SUBMIT" onclick="importExcel()">导入</button>
                 </td>
             </tr>
 </c:forEach>
@@ -109,6 +116,23 @@
         });
 
 </script>
-
+<script>
+    function importExcel() {
+        debugger
+        $.ajax({
+            type: "get",
+            url: '/edoc/excel',
+            data: new FormData($('#uploadForm')[0]),
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                alert(data)
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("请求失败！");
+            }
+        });
+    }
+</script>
 </body>
 </html>

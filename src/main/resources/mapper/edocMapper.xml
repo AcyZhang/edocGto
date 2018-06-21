@@ -13,7 +13,9 @@
         </where>
           limit #{from},#{pageSize}
     </select>
-
+<insert id="upload" parameterType="com.edocGorty.pojo.img">
+    insert into img(imgPicPath,name,imgs) values(#{imgPicPath},#{name},#{imgs})
+</insert>
 <delete id="Del" >
     delete from edoc_entry where id=#{id}
 
@@ -26,5 +28,11 @@
             categoryId=categoryId
         </if>
         </where>
+    </select>
+    <insert id="insertComment" parameterType="com.edocGorty.pojo.Comment">
+        insert into tms_pro (comm_name,comm_price,comm_pl,provider_type,imgPicPath) values (#{comm_name},#{comm_price},#{comm_pl},#{provider_type},#{imgPicPath})
+    </insert>
+    <select id="getList" resultType="com.edocGorty.pojo.edocentry">
+        select * from edoc_entry
     </select>
 </mapper>

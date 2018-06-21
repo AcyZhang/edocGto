@@ -33,8 +33,8 @@ public class UpLoadTset {
      */
     @Test
     public void ali() {
-        String key="pic0067.jpg";
-        OssClientUtil.uploadPic(imsge2byte("E:\\Photo\\moten.jpg"), key);
+        String key="ad5.jpg";
+        OssClientUtil.uploadPic(imsge2byte("E:\\Photo\\ad5.jpg"), key);
         System.out.println( OssClientUtil.getUrl(key));
     }
     /**
