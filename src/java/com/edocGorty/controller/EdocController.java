@@ -33,14 +33,12 @@ import java.util.*;
 public class EdocController {
     @Resource
     private edocService edocService;
-
     @RequestMapping(value = "/inde", method = RequestMethod.GET)
     public String getInfos(@RequestParam(value = "categoryId", defaultValue = "0") Integer categoryId, HttpSession session,
                            @RequestParam(value = "pageIndex", required = false) String pageIndex,
                            Model model) {
         List<edocentry> edoc = null;
         int pageSize = Constants.pageSize;
-
         //当前页码
         Integer currentPageNo = 1;
         if (pageIndex != null) {
@@ -48,7 +46,6 @@ public class EdocController {
                 currentPageNo = Integer.valueOf(pageIndex);
                 System.out.println(currentPageNo+"========="+pageIndex);
             } catch (NumberFormatException e) {
-                // TODO: handle exception
                 e.printStackTrace();
             }
         }
@@ -57,7 +54,6 @@ public class EdocController {
         try {
             totalCount = edocService.count(categoryId);
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         PageSupport pages = new PageSupport();
@@ -73,18 +69,14 @@ public class EdocController {
         }
         try {
             edoc = edocService.getInfo(categoryId, (pages.getCurrentPageNo() - 1) * pageSize, pageSize);
-
-
             session.setAttribute("list", edoc);
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         model.addAttribute("pages", pages);
         System.out.println(edoc);
         return "sss";
     }
-
     @RequestMapping(value = "/inDel", method = RequestMethod.GET)
     @ResponseBody
     public Map<String, String> DelInfo(@RequestParam(value = "id", defaultValue = "0") Integer id) {
@@ -108,11 +100,8 @@ public class EdocController {
        try {
            name = osaUtils.uploadImg2Oss(file);
            String imgUrl = osaUtils.getImgUrl(name);
-           System.out.println("asdsfdgfhghjg" + imgUrl);
             img.setImgPicPath(imgUrl);
            if (edocService.upload(img) > 0) {
-               // http://fe-video.oss-cn-beijing.aliyuncs.com/pic0005.jpg?Expires=1842952341&OSSAccessKeyId=LTAIHnUCvJa806Cv&Signature=b0uG%2FBE4%2B%2Frv70xq97NQXZnzbK0%3D
-              // http://fe-video.oss-cn-beijing.aliyuncs.com/fe-video/1527931569595.jpg?Expires=1843291562&OSSAccessKeyId=LTAIHnUCvJa806Cv&Signature=%2BJ78Qy4Vtx%2FuHVuVUb%2FPXTniSAY%3D
                return "sss";
            } else {
                return "upload";
@@ -122,7 +111,6 @@ public class EdocController {
        }
       return "upload";
    }
-
     @RequestMapping(value="/excel", method=RequestMethod.POST)//默认是get方式提交
     @ResponseBody
     public void exportSysUsers(HttpServletRequest req,HttpServletResponse res,
@@ -174,7 +162,6 @@ public class EdocController {
                 bos.close();
         }
     }
-
     /**
      * 生成Excel数据
      * @param userList

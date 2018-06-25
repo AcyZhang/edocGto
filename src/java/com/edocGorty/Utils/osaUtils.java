@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.Random;
 /**
  * Created by AcY on 2018/6/2.
+ * 这些变量信息自行到阿里云oss存储控制台获取
  */
 public class osaUtils {
     //todo 这些变量信息自行到阿里云oss存储控制台获取
@@ -23,7 +24,6 @@ public class osaUtils {
     private String bucketName = "xxx";
     // 文件存储目录       替换成自己的
    private String filedir = "xx";
-
     private OSSClient ossClient;
 
     public osaUtils() {
