@@ -22,7 +22,7 @@ public class osaUtils {
     // Bucket名称     替换成自己的
     private String bucketName = "xxx";
     // 文件存储目录       替换成自己的
-   private String filedir = "xxx";
+   private String filedir = "xx";
 
     private OSSClient ossClient;
 
