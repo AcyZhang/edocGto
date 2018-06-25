@@ -177,7 +177,6 @@ public class EdocController {
             user = userList.get(j);
             Map<String, Object> mapValue = new HashMap<String, Object>();
             mapValue.put("title", user.getTitle());
-
             mapValue.put("summary", user.getSummary());
             mapValue.put("uploaduser", user.getUploaduser());
             listmap.add(mapValue);
