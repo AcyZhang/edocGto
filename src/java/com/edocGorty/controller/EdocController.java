@@ -1,6 +1,5 @@
 package com.edocGorty.controller;
 
-
 import com.edocGorty.Utils.osaUtils;
 import com.edocGorty.common.Constants;
 import com.edocGorty.common.ExcelImportUtil;
@@ -25,9 +24,6 @@ import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
-
-
 
 /**
  * Created by AcY on 2018/3/5.
@@ -124,16 +120,10 @@ public class EdocController {
        } catch (Exception e) {
            e.printStackTrace();
        }
-
       return "upload";
    }
 
-
-
-
-
-
-    @RequestMapping(value="/excel", method=RequestMethod.POST)
+    @RequestMapping(value="/excel", method=RequestMethod.POST)//默认是get方式提交
     @ResponseBody
     public void exportSysUsers(HttpServletRequest req,HttpServletResponse res,
                                String title, String summary, String uploaduser) throws IOException{

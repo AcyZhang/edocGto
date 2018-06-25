@@ -14,6 +14,7 @@ import java.util.Date;
 
 /**
  * Created by AcY on 2018/5/31.
+ * 屏幕截图
  */
 public class ImgUtils {
    private String  path;

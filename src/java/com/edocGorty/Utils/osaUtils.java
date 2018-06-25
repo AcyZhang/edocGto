@@ -16,13 +16,13 @@ public class osaUtils {
     // endpoint         替换成自己的
     private String endpoint = "http://oss-cn-beijing.aliyuncs.com";
     // accessKey        替换成自己的
-    private String accessKeyId = "LTAIHnUCvJa806Cv";
+    private String accessKeyId = "xxx";
     //accessKeySecret   替换成自己的
-    private String accessKeySecret = "0oOuWvz9ynPYyMU3QbQ4RuPHXqN9Bu";
+    private String accessKeySecret = "xxx";
     // Bucket名称     替换成自己的
-    private String bucketName = "fe-video";
+    private String bucketName = "xxx";
     // 文件存储目录       替换成自己的
-   private String filedir = "fe-video/";
+   private String filedir = "xxx";
 
     private OSSClient ossClient;
 

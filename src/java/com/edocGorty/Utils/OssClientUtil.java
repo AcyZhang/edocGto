@@ -22,7 +22,7 @@ public class OssClientUtil {
     private static String acessKeyId = "xx";
     private static String accessKeySecret = "xx";
     //要上传的文件地址
-    private static String bucket = "fe-video";
+    private static String bucket = "xxx";
     private static OssClientUtil ossClientUtil;
     String path="";
 
