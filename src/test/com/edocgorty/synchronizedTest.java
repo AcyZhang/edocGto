@@ -19,15 +19,11 @@ public class synchronizedTest {
     public synchronized  void inc1(){
         j--;
         System.out.println(Thread.currentThread().getName()+"hhhuua"+j);
-
     }
     class t2 implements Runnable{
-
         public void run() {
             inc1();
         }
-
-
     }
     public static void main(String[] args) {
         synchronizedTest s=new synchronizedTest();
@@ -36,10 +32,8 @@ public class synchronizedTest {
         for (int i=0;i<2;i++){
             Thread thread=new Thread(t1);
             thread.start();
-
             Thread thread1=new Thread(t2);
             thread1.start();
         }
-
     }
 }
