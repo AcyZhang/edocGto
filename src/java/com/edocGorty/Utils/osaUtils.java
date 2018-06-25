@@ -128,7 +128,6 @@ public class osaUtils {
         }
         return ret;
     }
-
     /**
      * Description: 判断OSS服务文件上传时文件的contentType
      *
@@ -166,7 +165,6 @@ public class osaUtils {
         }
         return "image/jpeg";
     }
-
     /**
      * 获得url链接
      *

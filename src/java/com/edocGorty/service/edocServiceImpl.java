@@ -22,19 +22,15 @@ public class edocServiceImpl implements edocService {
                                    Integer pageSize) {
         return edocMapper.getInfo(categoryId,currentPageNo,pageSize);
     }
-
     public int Del(Integer id) {
         return edocMapper.Del(id);
     }
-
     public int count(int categoryId) {
         return edocMapper.count(categoryId);
     }
-
     public int upload(img img) {
         return edocMapper.upload(img);
     }
-
     public List<edocentry> getList(Map<String, Object> params) {
         return edocMapper.getList(params);
     }
