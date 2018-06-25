@@ -33,27 +33,21 @@ public class ExcelImportUtil {
         for(int i=0;i<keys.length;i++){
             sheet.setColumnWidth(i, (int) (35.7 * 150));
         }
-
         // 创建第一行
         Row row = sheet.createRow(0);
-
         // 创建两种单元格格式
         CellStyle cs = wb.createCellStyle();
         CellStyle cs2 = wb.createCellStyle();
-
         // 创建两种字体
         Font f = wb.createFont();
         Font f2 = wb.createFont();
-
         // 创建第一种字体样式（用于列名）
         f.setFontHeightInPoints((short)10);
         f.setColor(IndexedColors.BLACK.getIndex());
         f.setBoldweight(Font.BOLDWEIGHT_BOLD);
-
         // 创建第二种字体样式（用于值）
         f2.setFontHeightInPoints((short)10);
         f2.setColor(IndexedColors.BLACK.getIndex());
-
         // 设置第一种单元格的样式（用于列名）
         cs.setFont(f);
         cs.setBorderLeft(CellStyle.BORDER_THIN);
@@ -61,7 +55,6 @@ public class ExcelImportUtil {
         cs.setBorderTop(CellStyle.BORDER_THIN);
         cs.setBorderBottom(CellStyle.BORDER_THIN);
         cs.setAlignment(CellStyle.ALIGN_CENTER);
-
         // 设置第二种单元格的样式（用于值）
         cs2.setFont(f2);
         cs2.setBorderLeft(CellStyle.BORDER_THIN);
@@ -89,5 +82,4 @@ public class ExcelImportUtil {
         }
         return wb;
     }
-
 }
